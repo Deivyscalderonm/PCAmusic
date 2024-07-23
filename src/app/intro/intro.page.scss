@@ -1,0 +1,45 @@
+swiper-container {
+    width: 100%;
+    height: 100%;
+    
+  }
+  
+  swiper-slide {
+  
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 30rem;
+    height:40rem;
+    box-sizing: border-box;
+    font-size: 18px;
+  }
+  
+  .cool-title {
+    color: red;
+  }
+  
+  .custom-bg-color {
+    --background: gray;
+  }
+  
+  .sp-bg-color {
+    background-color: rgb(196, 242, 245);
+  }
+  
+  .logon {
+    --border-radius: 4;
+    left: 50%;
+  
+  }
+  
+  .name {
+    --ms-flex-align: center;
+  
+  
+  }
+  
+  

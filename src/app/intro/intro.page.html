@@ -1,0 +1,53 @@
+<!-- cabesera -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title> Intro </ion-title>
+  </ion-toolbar>
+</ion-header>
+<!-- contenido -->
+<ion-content class="custom-bg-color">
+
+  <ion-toolbar *ngFor="let toolbar of toolbars">
+    <ion-avatar class="logon">
+      <img alt="Silhouette of a person's head" src="{{toolbar.avatar}}" />
+    </ion-avatar>
+  </ion-toolbar>
+
+  <swiper-container class="sp-bg-color" 
+  navigation="true" 
+  pagination="true" 
+  >
+
+    <swiper-slide *ngFor="let slide of slides">
+      <h2>{{slide.title}}</h2>
+      <img src="{{slide.image}}" />
+      <p> {{slide.description}}</p>
+    </swiper-slide>
+  </swiper-container>
+
+</ion-content>
+<!-- pie da pagina -->
+<ion-tab-bar slot="bottom">
+  <ion-tab-button tab="home">
+    <ion-icon name="play-circle"></ion-icon>
+    Listen Now
+  </ion-tab-button>
+  <ion-tab-button tab="radio">
+    <ion-icon name="radio"></ion-icon>
+    Radio
+  </ion-tab-button>
+  <ion-tab-button tab="library">
+    <ion-icon name="library"></ion-icon>
+    Library
+  </ion-tab-button>
+  <ion-tab-button tab="search">
+    <ion-icon name="search"></ion-icon>
+    Search
+  </ion-tab-button>
+  <ion-tab-button tab="exit">
+    <ion-icon name="exit" (click)="exit()"></ion-icon>
+    Salir
+  </ion-tab-button>
+</ion-tab-bar>
+
+

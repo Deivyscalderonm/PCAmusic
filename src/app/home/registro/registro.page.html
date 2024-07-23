@@ -1,0 +1,37 @@
+<!-- cabesera -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title> Home </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="card-container">
+    <ion-card>
+      <ion-row>
+        <ion-col size-md="3" size="12" class="ion-padding ion-blue-bkg">
+          <img
+            src="https://thumbs.dreamstime.com/b/businessman-icon-vector-male-avatar-profile-image-profile-businessman-icon-vector-male-avatar-profile-image-182095609.jpg"
+            alt="Ionic logo" loading="lazy" />
+        </ion-col>
+        <ion-col size-md="9" size="12" class="welcome">
+          <ion-card-header>
+            <ion-card-title> Bienvenido a la pagina de registro </ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-button (click)="exit()" shape="round" color="primary"> Back </ion-button>
+          </ion-card-content>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
+</ion-content>
+<!-- pie da pagina -->
+<ion-tab-bar slot="bottom">
+  <ion-tab-button tab="exit">
+    <ion-icon name="exit" (click)="exit()"></ion-icon>
+    Salir
+  </ion-tab-button>
+</ion-tab-bar>
