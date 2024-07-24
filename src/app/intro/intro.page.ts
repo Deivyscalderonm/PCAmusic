@@ -53,12 +53,12 @@ export class IntroPage implements OnInit {
 
   ngOnInit() {
     console.log("hola intro")
+    // this.storage.set("isIntroShowed", true);
   }
 
 
   exit(){
-   //console.log("ingrese a la funcion");
-    this.storage.set("isIntroShowed", true);
+   //console.log("ingrese a la funcion");    
     this.router.navigateByUrl("/home");
   } 
 }

@@ -1,6 +1,12 @@
-import { Component, input, OnInit } from '@angular/core';
-import {FormBuilder,FormControl, FormGroup, Validators} from '@angular/forms';
-import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
+import { Component, OnInit } from '@angular/core';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+
 import { AuthenticateService } from '../services/authenticate.service';
 import { AlertController, NavController } from '@ionic/angular';
 
@@ -25,18 +31,26 @@ export class LoginPage implements OnInit {
       },
     ],
   };
-//declaracion de variable
-errorMessage:any; //variable para captura de mensaje
-
+  //declaracion de variable
+  errorMessage: any; //variable para captura de mensaje
 
   // construcor
   //AQUI EN EL CONSTRUCTOR DECLARAMOS EL NAV PARA LA NAVEGACION ENTRE PAGINAS
   //DECLARAMOS EL FORMBUILDER PARA CREACION DE FORMULARIOS O INTERACTUAR CON LOS MISMOS
   //DECLARAMOS EL AUTHENTICATEsERVICE QUE ES EL SERVICIO CREADO EN LA CARPETA SERVICIO PARA VERIFICAR EL ACCESO
-  constructor(private navCtrl:NavController, private formBuilder: FormBuilder,private authServices: AuthenticateService, private alertController: AlertController) {
+  constructor(
+    private navCtrl: NavController,
+    private formBuilder: FormBuilder,
+    private authServices: AuthenticateService,
+    private alertController: AlertController,
+    private storage: Storage
+  ) {
     this.loginForm = this.formBuilder.group({
-      email: new FormControl('',Validators.compose([Validators.pattern(
-        "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$"
+      email: new FormControl(
+        '',
+        Validators.compose([
+          Validators.pattern(
+            "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$"
           ),
           Validators.required,
         ])
@@ -46,24 +60,26 @@ errorMessage:any; //variable para captura de mensaje
   }
 
   ngOnInit() {}
-  
+
   onSubmit(dataLogin: any) {
-    //console.log(dataLogin);
-      this.authServices.onSubmitvali(dataLogin).then(res=>{
-      this.navCtrl.navigateForward('/home')
-    }).catch(err=>{
-      this.errorMessage=err;
-      this.presentAlert(this.errorMessage);      
-    })    
+    console.log(dataLogin);
+    this.authServices.onSubmitvali(dataLogin).then((res) => {
+        this.errorMessage = '';
+        this.storage.set('isUserLoggedIn', true);
+        this.navCtrl.navigateForward('/home');
+      })
+      .catch((err) => {
+        this.errorMessage = err;
+        this.presentAlert(this.errorMessage);
+      });
   }
 
   registre() {
     // console.log("ingrese a la funcion");
-    this.navCtrl.navigateForward('/registro')
-    // this.router.navigateByUrl('/registro');
+    this.navCtrl.navigateForward('/registro');
   }
 
-  async presentAlert(mss:string) {
+  async presentAlert(mss: string) {
     const alert = await this.alertController.create({
       header: 'Error',
       message: mss,
