@@ -16,7 +16,7 @@ export class HomePage {
   exit(){
     //console.log("ingrese a la funcion");
      this.storage.set("isIntroShowed", true);
-     this.router.navigateByUrl("/login");
+     this.router.navigateByUrl("/home");
    } 
   
 }

@@ -20,10 +20,7 @@ export class LoginPage implements OnInit {
     ],
     password: [
       { type: 'required', message: 'La Contraseña es obligatorio.' },
-      {
-        type: 'minlength',
-        message: 'La Contraseña debe tener minimo 6 caracteres.',
-      },
+      {type: 'minlength',message: 'La Contraseña debe tener minimo 6 caracteres.'},
     ],
   };
   //declaracion de variable
@@ -57,16 +54,13 @@ export class LoginPage implements OnInit {
   ngOnInit() {}
 
   onSubmit(dataLogin: any) {
-    console.log(dataLogin);
-    this.authServices
-      .onSubmitvali(dataLogin)
-      .then((res) => {
-        this.errorMessage = '';
-        this.storage.set('isUserLoggedIn', true);        
+    console.log("datos", dataLogin);
+    this.authServices.onSubmitvali(dataLogin).then((res) => {
+        this.errorMessage = "";
+        this.storage.set("isUserLoggedIn", true);        
         this.navCtrl.navigateForward('/home');
-         console.log("ingrese a la funcion");
-      })
-      .catch((err) => {
+         
+      }).catch(err => {
         this.errorMessage = err;
         this.presentAlert(this.errorMessage);
       });
