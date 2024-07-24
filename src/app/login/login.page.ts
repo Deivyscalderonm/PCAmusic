@@ -4,6 +4,7 @@ import {FormBuilder,FormControl, FormGroup, Validators} from '@angular/forms';
 
 import { AuthenticateService } from '../services/authenticate.service';
 import { AlertController, NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -35,7 +36,8 @@ export class LoginPage implements OnInit {
     private formBuilder: FormBuilder,
     private authServices: AuthenticateService,
     private alertController: AlertController,
-    private storage: Storage
+    private storage: Storage,
+    private router:Router
   ) {
     this.loginForm = this.formBuilder.group({
       email: new FormControl(
@@ -59,6 +61,7 @@ export class LoginPage implements OnInit {
         this.errorMessage = "";
         this.storage.set("isUserLoggedIn", true);        
         this.navCtrl.navigateForward('/home');
+     
          
       }).catch(err => {
         this.errorMessage = err;

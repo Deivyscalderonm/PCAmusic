@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
 
@@ -7,16 +7,19 @@ import { Storage } from '@ionic/storage-angular';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit  {
   
   constructor(private router:Router, private storage:Storage) { }
 
-
+  ngOnInit() {
+    console.log("hola home")
+    // this.storage.set("isIntroShowed", true);
+  }
 
   exit(){
     //console.log("ingrese a la funcion");
      this.storage.set("isIntroShowed", true);
-     this.router.navigateByUrl("/home");
+     this.router.navigateByUrl("/login");
    } 
   
 }
