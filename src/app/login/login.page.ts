@@ -1,11 +1,6 @@
 import { Storage } from '@ionic/storage-angular';
-import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { Component,  OnInit } from '@angular/core';
+import {FormBuilder,FormControl, FormGroup, Validators} from '@angular/forms';
 
 import { AuthenticateService } from '../services/authenticate.service';
 import { AlertController, NavController } from '@ionic/angular';
@@ -63,10 +58,13 @@ export class LoginPage implements OnInit {
 
   onSubmit(dataLogin: any) {
     console.log(dataLogin);
-    this.authServices.onSubmitvali(dataLogin).then((res) => {
+    this.authServices
+      .onSubmitvali(dataLogin)
+      .then((res) => {
         this.errorMessage = '';
-        this.storage.set('isUserLoggedIn', true);
+        this.storage.set('isUserLoggedIn', true);        
         this.navCtrl.navigateForward('/home');
+         console.log("ingrese a la funcion");
       })
       .catch((err) => {
         this.errorMessage = err;
