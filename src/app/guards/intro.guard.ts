@@ -9,9 +9,10 @@ export class IntroGuard implements CanActivate {
   constructor(private storage: Storage, private router:Router) {}
 
   async canActivate() {
-    const intr = await this.storage.get('isIntroShowed');
-    if (intr) {
-      return true;
+    const isIntroLoggedIn = await this.storage.get('isIntroShowed');
+   
+    if (isIntroLoggedIn) {
+       return true;
     } else {
       this.router.navigateByUrl("/login");
       return false;

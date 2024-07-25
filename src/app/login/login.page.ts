@@ -38,7 +38,7 @@ export class LoginPage implements OnInit {
     private authServices: AuthenticateService,
     private alertController: AlertController,
     private storage: Storage,
-    private router:Router
+    private route:Router
   ) {
     this.loginForm = this.formBuilder.group({
       email: new FormControl(
@@ -58,24 +58,20 @@ export class LoginPage implements OnInit {
 
   onSubmit(dataLogin: any) {
     console.log("datos", dataLogin);
-    // this.authServices.onSubmitvali(dataLogin).then((res) => {
-    //     this.errorMessage = "";
-    //     this.storage.set("isUserLoggedIn", true);        
+    this.authServices.onSubmitvali(dataLogin).then((res) => {
+        this.errorMessage = "";
+        this.storage.set("isUserLoggedIn", true);        
         this.navCtrl.navigateForward('/home');
-        this.router.navigateByUrl("/home");
-       
-     
-         
-  //     }).catch(err => {
-  //       this.errorMessage = err;
-  //       this.presentAlert(this.errorMessage);
-  //     });
+      }).catch(err => {
+        this.errorMessage = err;
+        this.presentAlert(this.errorMessage);
+      });
   }
 
   registre() {
     // console.log("ingrese a la funcion");
    //this.navCtrl.navigateForward('/registro');
-    this.router.navigateByUrl("/registro");
+    this.route.navigateByUrl("/registro");
   }
 
   async presentAlert(mss: string) {
