@@ -1,17 +1,77 @@
-
-.gradient-background {
-  --background: linear-gradient(to bottom right, #625fff, #feb47b);
-  height:85%;
+.content{
+  --background: linear-gradient(to bottom right, rgb(98, 95, 255), rgb(254, 180, 124));
+    overflow: hidden;
+    height: 100%;
+    overflow-y: hidden;
+    
 }
 
-ion-card {
-  --background: white;
-  margin: 20px;
-  top: 30px;
-  padding: 10px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+// .gradient-background {
+//   --background: linear-gradient(to bottom right, rgb(98, 95, 255), rgb(254, 180, 124));
+//   height:85%;
+ 
+// }
+
+.ioncard {
+//   --background: white;
+//   margin: 20px;
+//   padding: 50px;
+//   border-radius: 12px;
+//   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+//   max-width: 400px;
+//   overflow-y: hidden;
+max-height: 100%;
+  //overflow: auto; /* Esto permitirá que el contenido del card se desplace si es necesario */
 }
+
+
+
+// // // ion-item{
+// // // --background: linear-gradient(to bottom, rgba(98, 95, 255, 1.5), rgba(254, 180, 124, 1.5)); /* Degradado translúcido */
+// // //  }
+
+.regimg{
+  max-width: 250px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  overflow-y: hidden;
+  
+}
+
+
+.translucent-background {
+  background: linear-gradient(to bottom, rgba(98, 95, 255, 1.5), rgba(254, 180, 124, 1.5)); /* Degradado translúcido */
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px;
+  /*evita el scroll en el ecard*/
+ 
+}
+
+// .figure {
+//    width: 200px; /* Ajusta el tamaño del contenedor */
+//    height: 200px; /* Ajusta el tamaño del contenedor */
+//    overflow: hidden; /* Oculta cualquier parte de la imagen que se desborde */
+//    display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   border: 2px solid #ccc; /* Borde opcional alrededor del recuadro */
+//   border-radius: 8px; /* Esquinas redondeadas opcional */
+// }
+
+// .figure img {
+//   max-width: 100%; /* Ajusta el ancho de la imagen para que no se desborde del contenedor */
+//   max-height: 100%; /* Ajusta la altura de la imagen para que no se desborde del contenedor */
+//    object-fit: cover; /* Mantiene el aspecto de la imagen y cubre el contenedor */
+//   // align-items: center;
+ 
+  
+// }
+
 
 ion-button {
   margin-top: 20px;

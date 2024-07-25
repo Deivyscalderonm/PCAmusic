@@ -2,7 +2,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-button (click)="Cancel()">Cancel</ion-button>
+      <ion-button (click)="Cancel()" >Cancel</ion-button>
     </ion-buttons>
     <ion-title>Registro usuario</ion-title>
   </ion-toolbar>
@@ -12,10 +12,18 @@
 <!-- INICIO área de contenido-->
 
 <!-- INICIO del campo username -->
-<ion-content class="gradient-background" padding>
-  <ion-card>
+<ion-content class="content" >
+  <ion-grid class="regimg">
+    <ion-row > 
+      <ion-col>
+        <img src="../../assets/images/avatar.jpg"/>      
+      </ion-col>
+     </ion-row>
+  </ion-grid>
+
+  <ion-card class="ioncard">
     <form [formGroup]="registerForm" (ngSubmit)="(onregSubmit(registerForm.value))">
-      <ion-card-content>
+      <ion-card-content >
         <ion-item lines="translucent">
           <ion-input formControlName="name"  type="ion-text" label="Nombre" labelPlacement="floating" placeholder="Nombre" clearInput></ion-input>
         </ion-item>
@@ -43,12 +51,13 @@
       </ion-card-content>
     </form>
   </ion-card>
+
 </ion-content>
 <!-- FIN  del campo username -->
 <!-- pie da pagina -->
-<ion-tab-bar slot="bottom">
+<!-- <ion-tab-bar slot="bottom">
   <ion-tab-button tab="exit">
     <ion-icon name="exit" (click)="exit()"></ion-icon>
     Salir
   </ion-tab-button>
-</ion-tab-bar>
+</ion-tab-bar> -->
