@@ -17,7 +17,7 @@ export class HomePage implements OnInit {
 
   exit(){
     // console.log("ingrese a la funcion");
-     // this.storage.set("isIntroShowed", true);
+     this.storage.set("isUserLoggedIn", false);
      this.router.navigateByUrl("/login");
    } 
 }

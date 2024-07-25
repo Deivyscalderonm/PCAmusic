@@ -38,7 +38,7 @@ export class LoginPage implements OnInit {
     private authServices: AuthenticateService,
     private alertController: AlertController,
     private storage: Storage,
-    private route:Router
+    
   ) {
     this.loginForm = this.formBuilder.group({
       email: new FormControl(
@@ -70,8 +70,9 @@ export class LoginPage implements OnInit {
 
   registre() {
     // console.log("ingrese a la funcion");
-   //this.navCtrl.navigateForward('/registro');
-    this.route.navigateByUrl("/registro");
+   this.navCtrl.navigateForward('/registro');
+   this.loginForm.reset();
+    // this.route.navigateByUrl("/registro");
   }
 
   async presentAlert(mss: string) {

@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
 import { RegistroPageRoutingModule } from './registro-routing.module';
 
 import { RegistroPage } from './registro.page';
-import { RouterModule } from '@angular/router';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 @NgModule({
@@ -15,10 +15,11 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     FormsModule,
     IonicModule,
-    RegistroPageRoutingModule
-    
+    RegistroPageRoutingModule,
+    ReactiveFormsModule    
   ],
-  declarations: [RegistroPage]
+  declarations: [RegistroPage],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class RegistroPageModule {}
 

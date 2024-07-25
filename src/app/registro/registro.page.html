@@ -1,33 +1,50 @@
-<!-- cabesera -->
-<ion-header>
+<!-- INICIO área cabecera -->
+<ion-header [translucent]="true">
   <ion-toolbar color="primary">
-    <ion-title> Home </ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="Cancel()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-title>Registro usuario</ion-title>
   </ion-toolbar>
 </ion-header>
+<!-- FIN área cabecera -->
 
-<ion-content>
+<!-- INICIO área de contenido-->
 
-  <div class="card-container">
-    <ion-card>
-      <ion-row>
-        <ion-col size-md="3" size="12" class="ion-padding ion-blue-bkg">
-          <img
-            src="https://thumbs.dreamstime.com/b/businessman-icon-vector-male-avatar-profile-image-profile-businessman-icon-vector-male-avatar-profile-image-182095609.jpg"
-            alt="Ionic logo" loading="lazy" />
-        </ion-col>
-        <ion-col size-md="9" size="12" class="welcome">
-          <ion-card-header>
-            <ion-card-title> Bienvenido a la pagina de registro </ion-card-title>
-          </ion-card-header>
-
-          <ion-card-content>
-            <ion-button (click)="exit()" shape="round" color="primary"> Back </ion-button>
-          </ion-card-content>
-        </ion-col>
-      </ion-row>
-    </ion-card>
-  </div>
+<!-- INICIO del campo username -->
+<ion-content class="gradient-background" padding>
+  <ion-card>
+    <form [formGroup]="registerForm" (ngSubmit)="(onregSubmit(registerForm.value))">
+      <ion-card-content>
+        <ion-item lines="translucent">
+          <ion-input formControlName="name"  type="ion-text" label="Nombre" labelPlacement="floating" placeholder="Nombre" clearInput></ion-input>
+        </ion-item>
+        <ion-item lines="translucent">
+          <ion-input formControlName="appelli"  type="ion-text" label="apellido" labelPlacement="floating" placeholder="apellido" clearInput></ion-input>
+        </ion-item>
+        <ion-item lines="translucent">
+          <ion-input formControlName="email"  type="email" label="Correo Electrónico" labelPlacement="floating" placeholder="Correo Electrónico" clearInput></ion-input>
+        </ion-item>
+        <ion-item lines="translucent">
+          <ion-input formControlName="password"  type="password" label="Contraseña" labelPlacement="floating" placeholder="Contraseña" clearInput></ion-input>
+        </ion-item>
+        <ion-item lines="translucent">
+          <ion-input formControlName="confirpassword"  type="password" label="Confirmar Contraseña" labelPlacement="floating" placeholder="Confirmar Contraseña" clearInput></ion-input>
+        </ion-item>
+        <ion-button
+          type="submit"
+          [disabled]="!registerForm.valid"
+          expand="block"
+          shape="round"
+          color="primary"
+        >
+          Registrarse
+        </ion-button>
+      </ion-card-content>
+    </form>
+  </ion-card>
 </ion-content>
+<!-- FIN  del campo username -->
 <!-- pie da pagina -->
 <ion-tab-bar slot="bottom">
   <ion-tab-button tab="exit">

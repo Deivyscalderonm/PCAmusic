@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class AuthenticateService {
   constructor() {}
 
-  // AQUI S ECREA EL SERVICIO DE VALIDACION DE LOGIN PARA EL ACCESO
+  // AQUI SE CREA EL SERVICIO DE VALIDACION DE LOGIN PARA EL ACCESO
   onSubmitvali(credentials: any) {
     return new Promise((accept, reject) => {
       if (credentials.email == 'dj@gmail.com' && credentials.password == '123456')
@@ -17,4 +17,17 @@ export class AuthenticateService {
       }
     });
   }
+ // AQUI SE CREA EL SERVICIO DE VALIDACION DE REGISTRO DE USUARIO
+  onRegvali(credentials: any) {
+    return new Promise((accept, reject) => {
+      if (credentials.email == 'dj@gmail.com' && credentials.password == '123456')
+      {
+        accept('Login correcto');
+      } else {
+        reject('Acceso incorrecto');
+      }
+    });
+  }
+
+  
 }

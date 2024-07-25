@@ -1,26 +1,19 @@
-.card-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    
+
+.gradient-background {
+  --background: linear-gradient(to bottom right, #625fff, #feb47b);
+  height:85%;
 }
 
-ion-card{
-max-width: 600px;
-.ion-blue-bkg{
-    background: blue;
-    display: flex; 
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-img{
-    height: 60%;
+ion-card {
+  --background: white;
+  margin: 20px;
+  top: 30px;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-
-
-
+ion-button {
+  margin-top: 20px;
+   border-radius: 12px;
 }
