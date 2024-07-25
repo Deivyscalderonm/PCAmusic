@@ -1,25 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Storage } from '@ionic/storage-angular';
+import { Component, ViewChild } from '@angular/core';
+import {  Router } from '@angular/router';
+import { register } from 'swiper/element/bundle';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit  {
+export class HomePage {
   
-  constructor(private router:Router, private storage:Storage) { }
+  constructor(private router:Router) { }
 
-  ngOnInit() {
-    console.log("hola home")
-    // this.storage.set("isIntroShowed", true);
+  login(){
+   
+    this.router.navigateByUrl("/intro");
   }
 
-  exit(){
-    //console.log("ingrese a la funcion");
-     this.storage.set("isIntroShowed", true);
-     this.router.navigateByUrl("/login");
-   } 
+  registre(){
+    console.log("ingrese a la funcion");
+    this.router.navigateByUrl("/registro");
+  }
+
   
 }
