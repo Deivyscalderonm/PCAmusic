@@ -1,39 +1,67 @@
-// .card-container{
-//     display: flow-root;
-//     align-items: center;
-//     justify-content: center;
-//     height: 100%;
-// }
+.card-container {
+  --background: linear-gradient(to bottom right, rgb(98, 95, 255), rgb(254, 180, 124));
+  overflow: hidden;
+  overflow-y: hidden;
+}
+
+
+.translucent-background {
+  background: linear-gradient(to bottom, rgba(98, 95, 255, 1.5), rgba(254, 180, 124, 1.5));
+  /* Degradado translúcido */
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px;
+  /*evita el scroll en el ecard*/
+
+}
+
 
 .avatar-figure {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .login-card {
-    max-width: 350px;
-    margin: auto;
-    text-align: center;
-    padding: 30px;
-    color: aqua;
-  }
-  
-  .validation-messages {
-    text-align: center;
-    color: #ff6347; /* Color rojo para mensajes de error */
-    margin-top: 10px;
-  }
-  
-  .error-message {
-    font-size: 12px;
-  }
-  
-  .login-button {
-    margin-top: 20px;
-  }
-  
-  .register-button {
-    margin-top: 20px;
-  }
-  
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.login-card {
+  max-width: 350px;
+  margin: auto;
+  text-align: center;
+  padding: 30px;
+  overflow: hidden;
+  overflow-y: hidden;
+  background: linear-gradient(to bottom, rgba(98, 95, 255, 1.5), rgba(254, 180, 124, 1.5));
+  /* Degradado translúcido */
+  display: block;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  // /*evita el scroll en el ecard*/
+}
+
+.validation-messages {
+  text-align: center;
+  color: #ff6347;
+  /* Color rojo para mensajes de error */
+  margin-top: 10px;
+}
+
+.error-message {
+  font-size: 12px;
+}
+
+.login-button {
+  margin-top: 20px;
+}
+
+.register-button {
+  margin-top: 20px;
+}
+
+ion-item{
+  --border-radius: 15px; /* Ajusta el valor según tus necesidades */
+  padding: 8px; /* Opcional: para añadir algo de relleno */
+  margin: 8px 0; /* Opcional: para espaciar los items */
+
+}

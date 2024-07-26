@@ -19,6 +19,7 @@ import { Router } from '@angular/router';
 })
 export class RegistroPage implements OnInit {
   registerForm: FormGroup;
+  errorMessage: any;
 
   // @ViewChild(IonModal)
   // modal!: IonModal;
@@ -98,8 +99,15 @@ export class RegistroPage implements OnInit {
 
   ngOnInit() {}
 
+// procedimiento para el registro
   onregSubmit(datareg: any) {
-    console.log('datos', datareg);
+   // console.log('datos', datareg);
+    // this.storage.set("User", datareg);  
+    this.authServices.onRegvali(datareg).then(res => {
+      this.errorMessage = "";
+      this.navCtrl.navigateForward('/login');
+    }); 
+
   }
 
   Cancel() {
@@ -113,4 +121,16 @@ export class RegistroPage implements OnInit {
     this.navCtrl.navigateForward('/login');
     // this.router.navigateByUrl('/login');
   }
+
+//Muestra el mesnaje en pantalla 
+  async presentAlert(mss: string) {
+    const alert = await this.alertController.create({
+      header: 'Error',
+      message: mss,
+      buttons: ['Ok', 'Cancelar'],
+    });
+
+    await alert.present();
+  }
+
 }

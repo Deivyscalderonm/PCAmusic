@@ -54,7 +54,9 @@ export class LoginPage implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    
+  }
 
   onSubmit(dataLogin: any) {
     console.log("datos", dataLogin);
@@ -62,6 +64,7 @@ export class LoginPage implements OnInit {
         this.errorMessage = "";
         this.storage.set("isUserLoggedIn", true);        
         this.navCtrl.navigateForward('/home');
+       
       }).catch(err => {
         this.errorMessage = err;
         this.presentAlert(this.errorMessage);

@@ -5,73 +5,58 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-    <ion-card class="login-card" >
-    <figure class="avatar-figure">
-      <img
-        src="https://thumbs.dreamstime.com/b/businessman-icon-vector-male-avatar-profile-image-profile-businessman-icon-vector-male-avatar-profile-image-182095609.jpg"
-        alt="Avatar"
-        loading="lazy"
-      />
-    </figure>
+<ion-content [fullscreen]="true" class="card-container">
+  <div>
+    <ion-card class="login-card">
+      <figure class="avatar-figure">
+        <img
+          src="https://thumbs.dreamstime.com/b/businessman-icon-vector-male-avatar-profile-image-profile-businessman-icon-vector-male-avatar-profile-image-182095609.jpg"
+          alt="Avatar" loading="lazy" />
+      </figure>
 
-    <form [formGroup]="loginForm" (ngSubmit)="(onSubmit(loginForm.value))">
-      <!-- AQUI COMIENZA EL CAMPO EMAIL -->
-      <ion-item lines="none">
-        <ion-icon
-          slot="start"
-          name="mail-outline"
-          aria-hidden="true"
-        ></ion-icon>
-        <ion-input
-          formControlName="email"
-          label="Email"
-          labelPlacement="floating"
-          placeholder="Email"
-          clearInput
-        >
-        </ion-input>
-      </ion-item>
-      <!-- AQUI SE REALIZA LA VALIDACION DEL CAMPO EMAIL PARA SABER SI ES VALIDA Y SE MUESTRA EL MENSAJE -->
-      <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.dirty">
-        <ion-text color="danger" *ngFor="let validation of validation_messages.email">
-          <div *ngIf="loginForm.get('email')?.hasError(validation.type)">
-            {{ validation.message }}
-          </div>
-        </ion-text>
-      </div>
-      <!--AQUI TERMINA CAMPO Email -->
+      <form [formGroup]="loginForm" (ngSubmit)="(onSubmit(loginForm.value))">
+        <!-- AQUI COMIENZA EL CAMPO EMAIL -->
+        <ion-item lines="none">
+          <ion-icon slot="start" name="mail-outline" aria-hidden="true"></ion-icon>
+          <ion-input formControlName="email" label="Email" labelPlacement="floating" placeholder="Email" clearInput>
+          </ion-input>
+        </ion-item>
+        <!-- AQUI SE REALIZA LA VALIDACION DEL CAMPO EMAIL PARA SABER SI ES VALIDA Y SE MUESTRA EL MENSAJE -->
+        <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.dirty">
+          <ion-text color="danger" *ngFor="let validation of validation_messages.email">
+            <div *ngIf="loginForm.get('email')?.hasError(validation.type)">
+              {{ validation.message }}
+            </div>
+          </ion-text>
+        </div>
+        <!--AQUI TERMINA CAMPO Email -->
 
-      <!-- AQUI COMIENZA EL CAMPO CONTRASEÑA -->
-      <ion-item lines="translucent">
-        <ion-icon slot="start" name="lock-closed" aria-hidden="true"></ion-icon>
-        <ion-input formControlName="password" id="password" type="password" label="Password" labelPlacement="floating" placeholder="password" clearInput>
-        </ion-input>
-      </ion-item>
-      <!-- AQUI SE REALIZA LA VALIDACION DEL CAMPO CONTRASEÑA SABER SI ES VALIDA Y SE MUESTRA EL MENSAJE-->
-      <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.dirty">
-        <ion-text color="danger" *ngFor="let validation of validation_messages.password">
-          <div *ngIf="loginForm.get('password')?.hasError(validation.type)">
-            {{ validation.message }}
-          </div>
-        </ion-text>
-      </div>
-      <!-- AQUI TERMINA CAMPO CONTRASEÑA-->
+        <!-- AQUI COMIENZA EL CAMPO CONTRASEÑA -->
+        <ion-item lines="translucent">
+          <ion-icon slot="start" name="lock-closed" aria-hidden="true"></ion-icon>
+          <ion-input formControlName="password" id="password" type="password" label="Password" labelPlacement="floating"
+            placeholder="password" clearInput>
+          </ion-input>
+        </ion-item>
+        <!-- AQUI SE REALIZA LA VALIDACION DEL CAMPO CONTRASEÑA SABER SI ES VALIDA Y SE MUESTRA EL MENSAJE-->
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.dirty">
+          <ion-text color="danger" *ngFor="let validation of validation_messages.password">
+            <div *ngIf="loginForm.get('password')?.hasError(validation.type)">
+              {{ validation.message }}
+            </div>
+          </ion-text>
+        </div>
+        <!-- AQUI TERMINA CAMPO CONTRASEÑA-->
 
-      <br />
-      <br />
-      <!-- Botón de Inicio de Sesión -->
-      <ion-button
-        type="submit"
-        [disabled]="!loginForm.valid"
-        expand="block"
-        shape="round"
-        color="primary"
-      >
-        Iniciar Sesión
-      </ion-button>
-    </form>
-  </ion-card>
+        <br />
+        <br />
+        <!-- Botón de Inicio de Sesión -->
+        <ion-button type="submit" [disabled]="!loginForm.valid" expand="block" shape="round" color="primary">
+          Iniciar Sesión
+        </ion-button>
+      </form>
+    </ion-card>
+  </div>
 </ion-content>
 <!-- Footer -->
 <ion-tab-bar slot="bottom">

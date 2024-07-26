@@ -1,7 +1,7 @@
 .content{
   --background: linear-gradient(to bottom right, rgb(98, 95, 255), rgb(254, 180, 124));
     overflow: hidden;
-    height: 100%;
+   // height: 100%;
     overflow-y: hidden;
     
 }
@@ -14,22 +14,26 @@
 // }
 
 .ioncard {
+  --background: linear-gradient(to bottom right, rgb(98, 95, 255), rgb(254, 180, 124));
 //   --background: white;
-//   margin: 20px;
+--border-radius: 15px; 
+   margin: 20px;
 //   padding: 50px;
 //   border-radius: 12px;
 //   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 //   max-width: 400px;
 //   overflow-y: hidden;
-max-height: 100%;
+
   //overflow: auto; /* Esto permitirá que el contenido del card se desplace si es necesario */
 }
 
 
 
-// // // ion-item{
-// // // --background: linear-gradient(to bottom, rgba(98, 95, 255, 1.5), rgba(254, 180, 124, 1.5)); /* Degradado translúcido */
-// // //  }
+ion-item{
+  --border-radius: 15px; /* Ajusta el valor según tus necesidades */
+  padding: 8px; /* Opcional: para añadir algo de relleno */
+  margin: 8px 0; 
+ }
 
 .regimg{
   max-width: 250px;
@@ -51,27 +55,6 @@ max-height: 100%;
   /*evita el scroll en el ecard*/
  
 }
-
-// .figure {
-//    width: 200px; /* Ajusta el tamaño del contenedor */
-//    height: 200px; /* Ajusta el tamaño del contenedor */
-//    overflow: hidden; /* Oculta cualquier parte de la imagen que se desborde */
-//    display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   border: 2px solid #ccc; /* Borde opcional alrededor del recuadro */
-//   border-radius: 8px; /* Esquinas redondeadas opcional */
-// }
-
-// .figure img {
-//   max-width: 100%; /* Ajusta el ancho de la imagen para que no se desborde del contenedor */
-//   max-height: 100%; /* Ajusta la altura de la imagen para que no se desborde del contenedor */
-//    object-fit: cover; /* Mantiene el aspecto de la imagen y cubre el contenedor */
-//   // align-items: center;
- 
-  
-// }
-
 
 ion-button {
   margin-top: 20px;
