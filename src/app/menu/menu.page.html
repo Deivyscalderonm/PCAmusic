@@ -1,15 +1,21 @@
-<ion-split-pane >
+<ion-split-pane contentId="content">
   <ion-menu contentId="content" side="start">
     <ion-header>
-      <ion-toolbar>
+      <ion-toolbar  color="tertiary">
         <ion-buttons>
         <ion-title>Menu</ion-title>
         <ion-button>Cerrar </ion-button>
       </ion-buttons>
       </ion-toolbar>
       </ion-header>
-      <ion-content>
-        <p>primer </p>        
+      <ion-content >
+       
+        <ion-list>
+          <ion-item routerLink="/home">Home</ion-item>
+          <ion-item routerLink="/about">About</ion-item>
+          <ion-item routerLink="/contact">Contact</ion-item>
+        </ion-list>     
+            
       </ion-content>
   </ion-menu>
   <ion-router-outlet id="content" main></ion-router-outlet>
@@ -29,4 +35,11 @@
       <ion-title size="large">menu</ion-title>
     </ion-toolbar>
   </ion-header>
+</ion-content> -->
+<!-- <ion-content >
+  <ion-list>
+    <ion-item routerLink="/home">Home</ion-item>
+    <ion-item routerLink="/about">About</ion-item>
+    <ion-item routerLink="/contact">Contact</ion-item>
+  </ion-list>
 </ion-content> -->
