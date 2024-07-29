@@ -3,14 +3,14 @@
   <ion-toolbar color="primary">
     <ion-grid>
       <ion-row>
-          <ion-col size="auto">
-            <!-- aqui se agrega el menu -->
-            <ion-buttons>
-              <ion-menu-button></ion-menu-button>
-            </ion-buttons>
-            <!-- fin del menu -->
-          </ion-col>
-          <ion-title class="ion-text-center"> Home </ion-title>          
+        <ion-col size="auto">
+          <!-- aqui se agrega el menu -->
+          <ion-buttons>
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+          <!-- fin del menu -->
+        </ion-col>
+        <ion-title class="ion-text-center"> Home </ion-title>
       </ion-row>
     </ion-grid>
   </ion-toolbar>
@@ -18,7 +18,17 @@
 
 
 <ion-content class="content">
- <p>hola</p>
+  <h1>Artistas</h1>
+  <!-- swiper es lo que genera los slider  -->
+  <swiper-container  slides-per-view="4" speed="400" >
+    <swiper-slide *ngFor="let artstis of artists">
+      <ion-avatar>
+        <img src="{{artstis.image}}" />
+        <!-- <span>{{artstis.name}}</span> -->
+      </ion-avatar>
+      <span>{{artstis.name}}</span>
+    </swiper-slide>
+  </swiper-container>
 
 </ion-content>
 

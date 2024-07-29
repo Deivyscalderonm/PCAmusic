@@ -1,31 +1,88 @@
 
- 
- content{
-    position: absolute;
-    top: 0%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(54, 51, 255, 0.404), rgba(253, 251, 120, 0.37));
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-  }
+ion-list {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  //background: linear-gradient(135deg, rgba(54, 51, 255, 0.404), rgba(253, 251, 120, 0.37));
+  background: linear-gradient(135deg, rgba(255, 253, 131, 0.466),rgba(128, 126, 255, 0.452), rgba(129, 126, 255, 0.548), rgba(255, 253, 131, 0.466));
+  border-radius: 15px;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
 
-  ion-list{
-    position: absolute;
-    top:0%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(54, 51, 255, 0.404), rgba(253, 251, 120, 0.37));
-    --border-radius: 15px; 
-    
-  }
+}
 
- ion-item{
-      top:15%;
-     --background:linear-gradient(135deg, rgba(54, 51, 255, 0.404), rgba(253, 251, 120, 0.37));
-    --border-radius: 15px; 
-      border-width: 1px;
-  }
+/* Estilo para el ion-item */
+ion-item {
+  top: 15%;
+  --background: linear-gradient(135deg, rgba(255, 253, 131, 0.466),rgba(128, 126, 255, 0.452), rgba(129, 126, 255, 0.548), rgba(255, 253, 131, 0.466));
+  --border-radius: 15px;
+  border-width: 2px;
+  margin: 8px;  /* Espaciado entre los items */
+  padding: 12px;  /* Relleno interno */
+  --color: #000000; /* Color del texto */
+}
+
+
+ion-toolbar {
+  //--background: linear-gradient(45deg, #d2cdff, #fffec8); /* Fondo con gradiente */
+  --background: var(--ion-color-primary); /* Fondo de la barra de herramientas */
+  --color: #fff;  /* Color del texto en la barra de herramientas */
+  font-size: 18px;
+}
+
+
+
+ion-item:hover {
+  --background: rgba(207, 255, 180, 0.562); /* Fondo al pasar el mouse */
+}
+
+ion-icon {
+  font-size: 24px; /* Tamaño del icono */
+  color: var(--ion-color-primary); /* Color del icono */
+}
+
+
+ion-label {
+  font-size: 18px; /* Tamaño de la fuente del texto */
+  color: #070707; /* Color del texto */
+}
+
+
+/* Estilo para el ion-menu */
+ion-menu {
+ --width: 350px;
+}
+
+
+/* Estilo para el ion-title */
+ion-title {
+  font-family: 'Orbitron', sans-serif; /* Tipografía futurista */
+  font-size: 1.5em;
+  letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+/* Estilo para el ion-button */
+ion-button {
+  --background: #00c6ff; /* Fondo azul brillante */
+  --border-radius: 12px; /* Bordes redondeados */
+  --padding: 8px 16px;
+  --color: #fff; /* Color del texto */
+}
+
+/* Estilo para el ion-list */
+ion-list {
+  padding: 0;
+}
+
+
+
+/* Estilo para el ion-label */
+ion-label {
+  font-family: 'Orbitron', sans-serif; /* Tipografía futurista */
+  font-size: 1.8em;
+}
+
+

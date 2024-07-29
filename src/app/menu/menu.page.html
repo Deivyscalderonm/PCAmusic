@@ -1,23 +1,38 @@
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 <ion-split-pane contentId="content">
   <ion-menu contentId="content" side="start">
     <ion-header>
-      <ion-toolbar  color="tertiary">
+      <ion-toolbar color="tertiary">
         <ion-buttons>
-        <ion-title>Menu</ion-title>
-        <ion-button>Cerrar </ion-button>
-      </ion-buttons>
+          <ion-title>Menu</ion-title>
+          <ion-button (click)="closemenu()">
+            Cerrar
+            <ion-icon name="close-outline">
+            </ion-icon>
+          </ion-button>
+        </ion-buttons>
       </ion-toolbar>
-      </ion-header>
-      <ion-content >
-       
-        <ion-list>
-          <ion-item routerLink="/home">Home</ion-item>
-          <ion-item routerLink="/about">About</ion-item>
-          <ion-item routerLink="/contact">Contact</ion-item>
-        </ion-list>     
-            
-      </ion-content>
+    </ion-header>
+    <ion-content>
+
+      <ion-list>
+        <ion-item ><ion-label>Home</ion-label></ion-item>
+        <ion-item ><ion-label>About</ion-label></ion-item>
+        <ion-item ><ion-label>Contact</ion-label></ion-item>
+        <!-- Boton de cerrar sesion -->
+        <ion-item (click)="exit()">
+          <ion-icon name="log-out-outline" ></ion-icon>
+          <ion-label>Salir</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+
   </ion-menu>
+
+
+
+
+
   <ion-router-outlet id="content" main></ion-router-outlet>
 </ion-split-pane>
 

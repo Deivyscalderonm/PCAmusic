@@ -60,14 +60,17 @@ export class LoginPage implements OnInit {
 
   onSubmit(dataLogin: any) {
     console.log("datos", dataLogin);
-    this.authServices.onSubmitvali(dataLogin).then((res) => {
-        this.errorMessage = "";
-        this.storage.set("isUserLoggedIn", true);        
+    this.authServices.onSubmitvali(dataLogin).then((res) => { 
+        this.storage.set("isUserLoggedIn", true); 
+        this.errorMessage = "";                      
         this.navCtrl.navigateForward('menu/home');
+        this.loginForm.reset();
        
       }).catch(err => {
         this.errorMessage = err;
         this.presentAlert(this.errorMessage);
+        this.loginForm.reset();
+
       });
   }
 

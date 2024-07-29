@@ -12,7 +12,7 @@ const routes: Routes = [
     children:[
       {
       path:"home",
-      loadChildren:()=>import("../home/home.module").then( m => m.HomePageModule),canActivate:[LoginGuard]
+      loadChildren:()=>import("../home/home.module").then( m => m.HomePageModule)
       }
     ]
   }
