@@ -22,7 +22,7 @@
   <!-- swiper es lo que genera los slider  -->
   <swiper-container  slides-per-view="4" speed="400" >
     <swiper-slide *ngFor="let artstis of artists">
-      <ion-avatar>
+      <ion-avatar (click)="showSongs(artstis)">
         <img src="{{artstis.image}}" />
         <!-- <span>{{artstis.name}}</span> -->
       </ion-avatar>

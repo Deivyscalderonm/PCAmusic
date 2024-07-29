@@ -4,7 +4,7 @@ import { NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
 import { MusicService } from '../services/music.service';
 import { ModalController } from '@ionic/angular';
-//import { SongModalPage } from '../song-modal/song-modal.page';
+import { SongModalPage } from '../song-modal/song-modal.page';
 
 
 
@@ -28,6 +28,7 @@ export class HomePage implements OnInit {
     private musicService: MusicService, 
     private modalController: ModalController) { }
 
+
   ngOnInit() {
     this.artistsJson = this.musicService.getArtistsJson().artists;
     //this.artists = this.musicService.getArtistsJson().artists;
@@ -43,21 +44,21 @@ export class HomePage implements OnInit {
 
   }
 
-  // async showSongs(artstis: any) {
-  //   console.log(artstis)
-  //   const songs = await this.musicService.getArtistTracks(artstis.id);
-  //   const modal = await this.modalController.create(
-  //     {
-  //       component: SongModalPage,
-  //       componentProps: {
-  //         name: artstis.name,
-  //         id: artstis.id,
-  //         songs: songs
-  //       }
-  //     }
-  //   );
-  //   modal.present();
-  //}
+  async showSongs(artstis: any) {
+    console.log(artstis)
+    // const songs = await this.musicService.getArtistTracks(artstis.id);
+    const modal = await this.modalController.create(
+      {
+        component: SongModalPage,
+        componentProps: {
+          name: artstis.name,
+          id: artstis.id,
+          // songs: songs
+        }
+      }
+    );
+    modal.present();
+  }
 
 
   exit() {
