@@ -46,14 +46,14 @@ export class HomePage implements OnInit {
 
   async showSongs(artstis: any) {
     console.log(artstis)
-    // const songs = await this.musicService.getArtistTracks(artstis.id);
+    const songs = await this.musicService.getArtistTracks(artstis.id);
     const modal = await this.modalController.create(
       {
         component: SongModalPage,
         componentProps: {
           name: artstis.name,
           id: artstis.id,
-          // songs: songs
+          songs: songs
         }
       }
     );
