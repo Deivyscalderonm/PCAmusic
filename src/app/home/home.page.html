@@ -16,11 +16,10 @@
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content class="content">
   <h1>Artistas</h1>
   <!-- swiper es lo que genera los slider  -->
-  <swiper-container  slides-per-view="4" speed="400" >
+  <swiper-container slides-per-view="4" speed="400">
     <swiper-slide *ngFor="let artstis of artists">
       <ion-avatar (click)="showSongs(artstis)">
         <img src="{{artstis.image}}" />
@@ -29,29 +28,51 @@
       <span>{{artstis.name}}</span>
     </swiper-slide>
   </swiper-container>
-
+  <ion-grid>
+    <ion-row>
+        <ion-col class="ion-text-start">{{parseTime(currentSong.currentTime) || "0:00"}}</ion-col>
+        <ion-col class="ion-text-end">{{ parseTime(currentSong.duration) || "0:00"}}</ion-col>
+    </ion-row>
+   </ion-grid>
+   <ion-progress-bar [value]="newTime || 0"></ion-progress-bar>
+   <ion-grid>
+    <ion-row>
+        <ion-col>
+            <ion-icon name="heart"></ion-icon>
+        </ion-col>
+        <ion-col>
+            <ion-text>{{song.name || "Aun no has seleccionado cancion"}}</ion-text>
+        </ion-col>
+        <ion-col class="ion-text-end">
+            <ion-icon name="play" (click)="play()" *ngIf="!song.playing"></ion-icon>
+            <ion-icon name="pause" (click)="pause()" *ngIf="song.playing"></ion-icon>
+        </ion-col>
+    </ion-row>
+   </ion-grid>
 </ion-content>
 
 <!-- pie da pagina -->
-<ion-tab-bar slot="bottom">
-  <ion-tab-button tab="home">
-    <ion-icon name="play-circle"></ion-icon>
-    Listen Now
-  </ion-tab-button>
-  <ion-tab-button tab="radio">
-    <ion-icon name="radio"></ion-icon>
-    Radio
-  </ion-tab-button>
-  <ion-tab-button tab="library">
-    <ion-icon name="library"></ion-icon>
-    Library
-  </ion-tab-button>
-  <ion-tab-button tab="search">
-    <ion-icon name="search"></ion-icon>
-    Search
-  </ion-tab-button>
-  <ion-tab-button tab="exit">
-    <ion-icon name="exit" (click)="exit()"></ion-icon>
-    Salir
-  </ion-tab-button>
-</ion-tab-bar>
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home">
+      <ion-icon name="play-circle"></ion-icon>
+      Listen Now
+    </ion-tab-button>
+    <ion-tab-button tab="radio">
+      <ion-icon name="radio"></ion-icon>
+      Radio
+    </ion-tab-button>
+    <ion-tab-button tab="library">
+      <ion-icon name="library"></ion-icon>
+      Library
+    </ion-tab-button>
+    <ion-tab-button tab="search">
+      <ion-icon name="search"></ion-icon>
+      Search
+    </ion-tab-button>
+    <ion-tab-button tab="exit">
+      <ion-icon name="exit" (click)="exit()"></ion-icon>
+      Salir
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>
