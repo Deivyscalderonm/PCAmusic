@@ -20,7 +20,7 @@ export class HomePage implements OnInit {
   artistsJson: any;
   artists: any;
   song = {
-    name: '',
+    name: "",
     playing: false,
     preview_url: ''
 

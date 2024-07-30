@@ -46,8 +46,10 @@ ion-icon {
 
 
 ion-label {
-  font-size: 18px; /* Tamaño de la fuente del texto */
+ // font-size: 18px; /* Tamaño de la fuente del texto */
   color: #070707; /* Color del texto */
+  font-family: 'Orbitron', sans-serif; /* Tipografía futurista */
+  font-size: 1.8em;
 }
 
 
@@ -79,10 +81,10 @@ ion-list {
 
 
 
-/* Estilo para el ion-label */
-ion-label {
-  font-family: 'Orbitron', sans-serif; /* Tipografía futurista */
-  font-size: 1.8em;
-}
+// /* Estilo para el ion-label */
+// ion-label {
+//   font-family: 'Orbitron', sans-serif; /* Tipografía futurista */
+//   font-size: 1.8em;
+// }
 
 
