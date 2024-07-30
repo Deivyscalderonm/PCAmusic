@@ -1,15 +1,122 @@
+// .content {
+//   --background: linear-gradient(135deg, rgba(255, 253, 131, 0.466),rgba(128, 126, 255, 0.452), rgba(255, 253, 131, 0.466), rgba(129, 126, 255, 0.548));
+//   //--background: linear-gradient(135deg, rgba(54, 51, 255, 0.404), rgba(253, 251, 120, 0.37));
+//   background-blend-mode: overlay;
+//   overflow: hidden;
+//   // height: 100%;
+//   overflow-y: hidden;
+
+// }
+
+// ion-avatar{
+//   height: 80px;
+//   width: 80px;
+// }
+
+/* Estilos generales */
+body {
+  --ion-background-color: #1e1e2f;
+  --ion-text-color: #fff;
+}
+
+ion-header, ion-footer {
+  --background: #282c34;
+}
+
+/* Estilo del ion-toolbar y del ion-title */
+ion-toolbar {
+  --background: linear-gradient(45deg, #00c6ff, #0072ff);
+  --color: #fff;
+}
+
+ion-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+}
+
+/* Estilos para el ion-content */
 .content {
-  --background: linear-gradient(135deg, rgba(255, 253, 131, 0.466),rgba(128, 126, 255, 0.452), rgba(255, 253, 131, 0.466), rgba(129, 126, 255, 0.548));
-  //--background: linear-gradient(135deg, rgba(54, 51, 255, 0.404), rgba(253, 251, 120, 0.37));
-  background-blend-mode: overlay;
-  overflow: hidden;
-  // height: 100%;
-  overflow-y: hidden;
-
+  padding: 15px;
 }
 
-ion-avatar{
-  height: 80px;
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8em;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #00c6ff;
+}
+
+/* Estilo del swiper-container */
+swiper-container {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+}
+
+ion-avatar {
   width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+  border: 2px solid #00c6ff;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
 }
 
+ion-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+span {
+  text-align: center;
+  font-size: 0.9em;
+}
+
+/* Estilos para los iconos */
+ion-icon {
+  font-size: 1.5em;
+  color: #00c6ff;
+  cursor: pointer;
+}
+
+/* Estilos para el ion-progress-bar */
+ion-progress-bar {
+  height: 8px;
+  --background: #444;
+  --buffer-background: #666;
+  --progress-background: #00c6ff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Estilos para los botones del pie de página */
+ion-tab-bar {
+  --background: #282c34;
+}
+
+ion-tab-button {
+  --color-selected: #00c6ff;
+  --color: #fff;
+}
+
+ion-tab-button ion-icon {
+  font-size: 1.5em;
+}
+
+ion-tab-button:hover {
+  --color: #00c6ff;
+}
