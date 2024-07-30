@@ -8,7 +8,7 @@ import { ModalController, NavParams } from '@ionic/angular';
   styleUrls: ['./song-modal.page.scss'],
 })
 export class SongModalPage implements OnInit {
-  artstis_name:any;
+  artstis_name:any={};
   artstis_id:any;
   songs: any;
 
