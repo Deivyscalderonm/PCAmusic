@@ -66,7 +66,7 @@ export class HomePage implements OnInit {
     );
     
     modal.onDidDismiss().then(dataRteturned=>{
-     this.song=dataRteturned.data; 
+     this.song=dataRteturned.data || { name: "", playing: false, preview_url: '' }; //verificamos si el song esta vacio
     })
      modal.present();
   }

@@ -31,8 +31,8 @@
   
   <ion-grid>
     <ion-row>
-      <ion-col class="ion-text-start">{{parseTime(currentSong.currentTime) || "0:00"}}</ion-col>
-      <ion-col class="ion-text-end">{{ parseTime(currentSong.duration) || "0:00"}}</ion-col>
+      <ion-col class="ion-text-start">{{parseTime(currentSong?.currentTime) || "0:00"}}</ion-col>
+      <ion-col class="ion-text-end">{{ parseTime(currentSong?.duration) || "0:00"}}</ion-col>
     </ion-row>
   </ion-grid>
   <ion-progress-bar [value]="newTime || 0"></ion-progress-bar>
@@ -45,11 +45,11 @@
         <ion-text>{{song.name || "Aun no has seleccionado cancion" }}</ion-text>
       </ion-col>
       <ion-col class="ion-text-end">
-        <ion-icon name="play" (click)="play()" *ngIf="!song.playing"></ion-icon>
+        <ion-icon name="play" (click)="play()" *ngIf="!song?.playing"></ion-icon>
         <ion-icon
           name="pause"
           (click)="pause()"
-          *ngIf="song.playing"
+          *ngIf="song?.playing"
         ></ion-icon>
       </ion-col>
     </ion-row>

@@ -10,7 +10,7 @@ import { ModalController, NavParams } from '@ionic/angular';
 export class SongModalPage implements OnInit {
   artstis_name:any={};
   artstis_id:any;
-  songs: any;
+  songs: any={};
 
   constructor(private navParams: NavParams, private modalController: ModalController) { }
 
@@ -23,6 +23,9 @@ export class SongModalPage implements OnInit {
 
   async closeModal(){
     await this.modalController.dismiss();
+    this.artstis_name="";
+    this.artstis_id = "";
+   
   }
 
   async selectSong(song:any){

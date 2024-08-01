@@ -1,12 +1,12 @@
-// .content {
-//   --background: linear-gradient(135deg, rgba(255, 253, 131, 0.466),rgba(128, 126, 255, 0.452), rgba(255, 253, 131, 0.466), rgba(129, 126, 255, 0.548));
-//   //--background: linear-gradient(135deg, rgba(54, 51, 255, 0.404), rgba(253, 251, 120, 0.37));
-//   background-blend-mode: overlay;
-//   overflow: hidden;
-//   // height: 100%;
-//   overflow-y: hidden;
+.content {
+  --background: linear-gradient(135deg, rgba(255, 253, 131, 0.466),rgba(128, 126, 255, 0.452), rgba(255, 253, 131, 0.466), rgba(129, 126, 255, 0.548));
+  //--background: linear-gradient(135deg, rgba(54, 51, 255, 0.404), rgba(253, 251, 120, 0.37));
+  background-blend-mode: overlay;
+  overflow: hidden;
+  // height: 100%;
+  overflow-y: hidden;
 
-// }
+}
 
 // ion-avatar{
 //   height: 80px;
@@ -14,10 +14,10 @@
 // }
 
 /* Estilos generales */
-body {
-  --ion-background-color: #1e1e2f;
-  --ion-text-color: #fff;
-}
+// body {
+//   --ion-background-color: #1e1e2f;
+//   --ion-text-color: #fff;
+// }
 
 ion-header, ion-footer {
   --background: #282c34;
@@ -25,7 +25,7 @@ ion-header, ion-footer {
 
 /* Estilo del ion-toolbar y del ion-title */
 ion-toolbar {
-  --background: linear-gradient(45deg, #00c6ff, #0072ff);
+  --background: linear-gradient(45deg, #ff0000, #0072ff);
   --color: #fff;
 }
 
